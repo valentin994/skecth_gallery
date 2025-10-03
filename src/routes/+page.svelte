@@ -61,9 +61,13 @@ const images = [
 		name: 'Monika i Dario'
 	},
 	{
-		url: 'https://woop14abphufecql.public.blob.vercel-storage.com/sketches/WhatsApp%20Image%202025-10-03%20at%2009.51.43.jpeg',
+		url: 'https://woop14abphufecql.public.blob.vercel-storage.com/sketches/WhatsApp%20Image%202025-10-03%20at%2015.33.29.jpeg',
 		name: 'Marko'
-	}
+	},
+    {
+        url: 'https://woop14abphufecql.public.blob.vercel-storage.com/sketches/WhatsApp%20Image%202025-10-03%20at%2015.22.51.jpeg',
+        name: 'Goran'
+    }
 ];
 
 	let isOpen = false;
