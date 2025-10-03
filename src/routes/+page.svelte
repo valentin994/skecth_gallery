@@ -9,8 +9,7 @@
 		window.addEventListener('keydown', handler);
 		onDestroy(() => window.removeEventListener('keydown', handler));
 	});
-	let mainImageUrl =
-		'https://woop14abphufecql.public.blob.vercel-storage.com/sketches/68de2a44f1b3ed2d35b84586.jpg';
+	let mainImageUrl = 'https://woop14abphufecql.public.blob.vercel-storage.com/sketches/WhatsApp%20Image%202025-10-03%20at%2010.39.10.jpeg';
 
 	const imageUrls: string[] = [
 		'https://woop14abphufecql.public.blob.vercel-storage.com/sketches/68de2a44f1b3ed2d35b8457f.jpg',
@@ -68,7 +67,7 @@
 	<div
 		on:click={() => viewImage(0)}
 		style={`background-image: url('${mainImageUrl}')`}
-		class="w-full bg-gray-600 cursor-pointer bg-cover bg-center bg-no-repeat hover:brightness-90 md:bg-contain"
+		class="w-full bg-slate-200 cursor-pointer bg-cover bg-center bg-no-repeat hover:brightness-90 md:bg-contain"
 	></div>
 </div>
 
