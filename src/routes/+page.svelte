@@ -107,13 +107,13 @@
 		isOpen = false;
 	}
 
-    let isTouched = false;
-	function handleTouchStartHover() {
-		isTouched = true;
+    let touchIndex = null;
+	function handleTouchStartHover(index: number) {
+        touchIndex = index;
 	}
 
 	function handleTouchEndHover() {
-		isTouched = false;
+		touchIndex = null;
 	}
 </script>
 
@@ -133,15 +133,15 @@
 		<!-- svelte-ignore a11y_no_static_element_interactions -->
 		<div
 			on:click={() => viewImage(i + 1)}
-            on:touchstart={handleTouchStartHover}
+            on:touchstart={() => handleTouchStartHover(i)}
             on:touchend={handleTouchEndHover}
 			style={`background-image: url('${img.url}')`}
-			class="group h-96 cursor-pointer bg-cover bg-center shadow hover:brightness-90 md:h-[600px]"
+			class="relative group h-96 cursor-pointer bg-cover bg-center shadow hover:brightness-90 md:h-[600px]"
 		>
 			<div
 class={`absolute inset-0 flex items-center justify-center bg-black/40 transition ${
-			isTouched ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'
-		}`}
+					touchIndex === i ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'
+				}`}
 			>
 				<span class="text-xl font-medium text-white drop-shadow">{img.name}</span>
 			</div>
