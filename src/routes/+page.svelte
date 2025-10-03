@@ -28,7 +28,6 @@
 	];
 
 	let isOpen = false;
-	let currentImage: string | null = null;
 	const allImages = [mainImageUrl, ...imageUrls];
 	let currentIndex = 0;
 
@@ -70,7 +69,8 @@
 		on:click={() => viewImage(0)}
 		style={`background-image: url('${mainImageUrl}')`}
 		class="w-full bg-slate-200 cursor-pointer bg-cover bg-center bg-no-repeat hover:brightness-90 md:bg-contain"
-	></div>
+	>
+    </div>
 </div>
 
 <div class="grid grid-cols-2 gap-1 p-1 lg:grid-cols-5">
@@ -78,8 +78,14 @@
 		<div
 			on:click={() => viewImage(i+1)}
 			style={`background-image: url('${url}')`}
-			class="h-96 cursor-pointer bg-cover bg-center shadow hover:brightness-90 md:h-[600px]"
-		></div>
+			class="h-96 cursor-pointer bg-cover bg-center shadow hover:brightness-90 md:h-[600px] group"
+		>
+        <div
+				class="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition"
+			>
+				<span class="text-xl font-medium text-white drop-shadow">Slika {i + 1}</span>
+			</div>
+        </div>
 	{/each}
 </div>
 
