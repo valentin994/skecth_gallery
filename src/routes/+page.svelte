@@ -38,15 +38,15 @@ const images = [
 	},
 	{
 		url: 'https://woop14abphufecql.public.blob.vercel-storage.com/sketches/WhatsApp%20Image%202025-10-03%20at%2011.02.06.jpeg',
-		name: 'Ruza, Jadranka i Marinka'
+		name: 'Ruža, Jadranka i Marinka'
 	},
 	{
 		url: 'https://woop14abphufecql.public.blob.vercel-storage.com/sketches/68de2a44f1b3ed2d35b84582.jpg',
-		name: 'Zuhair, Ruza i Tamir'
+		name: 'Zuhair, Ruža Tamir'
 	},
 	{
 		url: 'https://woop14abphufecql.public.blob.vercel-storage.com/sketches/68de2a44f1b3ed2d35b8457f.jpg',
-		name: 'Anda i Paula'
+		name: 'Anđa i Paula'
 	},
 	{
 		url: 'https://woop14abphufecql.public.blob.vercel-storage.com/sketches/68de2a44f1b3ed2d35b84580.jpg',
