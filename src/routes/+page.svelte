@@ -40,7 +40,8 @@
 <!-- Main image -->
 <div class="flex min-h-screen w-full">
 	<div
-		class="w-full bg-gray-600 bg-[url('{mainImageUrl}')] bg-cover bg-center bg-no-repeat md:bg-contain hover:brightness-90"
+        style={`background-image: url('${mainImageUrl}')`}
+		class="w-full bg-gray-600 bg-cover bg-center bg-no-repeat md:bg-contain hover:brightness-90"
 	></div>
 </div>
 
