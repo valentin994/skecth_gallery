@@ -1,1 +1,7 @@
 @import 'tailwindcss';
+
+@media (hover: none) {
+  .group:active .group-hover\:opacity-100 {
+    opacity: 1 !important;
+  }
+}
