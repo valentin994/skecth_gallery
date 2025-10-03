@@ -11,24 +11,63 @@
 	});
 	let mainImageUrl = 'https://woop14abphufecql.public.blob.vercel-storage.com/sketches/WhatsApp%20Image%202025-10-03%20at%2010.39.10.jpeg';
 
-	const imageUrls: string[] = [
-		'https://woop14abphufecql.public.blob.vercel-storage.com/sketches/68de2a44f1b3ed2d35b84587.jpg',
-		'https://woop14abphufecql.public.blob.vercel-storage.com/sketches/68de2a44f1b3ed2d35b84584.jpg',
-		'https://woop14abphufecql.public.blob.vercel-storage.com/sketches/68de2a44f1b3ed2d35b84585.jpg',
-		'https://woop14abphufecql.public.blob.vercel-storage.com/sketches/68de2a44f1b3ed2d35b84581.jpg',
-		'https://woop14abphufecql.public.blob.vercel-storage.com/sketches/68de2a44f1b3ed2d35b84583.jpg',
-        'https://woop14abphufecql.public.blob.vercel-storage.com/sketches/WhatsApp%20Image%202025-10-03%20at%2015.00.29%281%29.jpeg',
-        'https://woop14abphufecql.public.blob.vercel-storage.com/sketches/WhatsApp%20Image%202025-10-03%20at%2011.02.06.jpeg',
-		'https://woop14abphufecql.public.blob.vercel-storage.com/sketches/68de2a44f1b3ed2d35b84582.jpg',
-		'https://woop14abphufecql.public.blob.vercel-storage.com/sketches/68de2a44f1b3ed2d35b8457f.jpg',
-		'https://woop14abphufecql.public.blob.vercel-storage.com/sketches/68de2a44f1b3ed2d35b84580.jpg',
-		'https://woop14abphufecql.public.blob.vercel-storage.com/sketches/68de2c9af1b3ed2d35b84588.jpg',
-		'https://woop14abphufecql.public.blob.vercel-storage.com/sketches/WhatsApp%20Image%202025-10-03%20at%2009.51.18.jpeg',
-		'https://woop14abphufecql.public.blob.vercel-storage.com/sketches/WhatsApp%20Image%202025-10-03%20at%2009.51.43.jpeg'
-	];
+const images = [
+	{
+		url: 'https://woop14abphufecql.public.blob.vercel-storage.com/sketches/68de2a44f1b3ed2d35b84587.jpg',
+		name: 'Mateja i Tom'
+	},
+	{
+		url: 'https://woop14abphufecql.public.blob.vercel-storage.com/sketches/68de2a44f1b3ed2d35b84584.jpg',
+		name: 'Lidija i Leo'
+	},
+	{
+		url: 'https://woop14abphufecql.public.blob.vercel-storage.com/sketches/68de2a44f1b3ed2d35b84585.jpg',
+		name: 'Matea i Nikola'
+	},
+	{
+		url: 'https://woop14abphufecql.public.blob.vercel-storage.com/sketches/68de2a44f1b3ed2d35b84581.jpg',
+		name: ''
+	},
+	{
+		url: 'https://woop14abphufecql.public.blob.vercel-storage.com/sketches/68de2a44f1b3ed2d35b84583.jpg',
+		name: ''
+	},
+	{
+		url: 'https://woop14abphufecql.public.blob.vercel-storage.com/sketches/WhatsApp%20Image%202025-10-03%20at%2015.00.29%281%29.jpeg',
+		name: ''
+	},
+	{
+		url: 'https://woop14abphufecql.public.blob.vercel-storage.com/sketches/WhatsApp%20Image%202025-10-03%20at%2011.02.06.jpeg',
+		name: ''
+	},
+	{
+		url: 'https://woop14abphufecql.public.blob.vercel-storage.com/sketches/68de2a44f1b3ed2d35b84582.jpg',
+		name: ''
+	},
+	{
+		url: 'https://woop14abphufecql.public.blob.vercel-storage.com/sketches/68de2a44f1b3ed2d35b8457f.jpg',
+		name: ''
+	},
+	{
+		url: 'https://woop14abphufecql.public.blob.vercel-storage.com/sketches/68de2a44f1b3ed2d35b84580.jpg',
+		name: ''
+	},
+	{
+		url: 'https://woop14abphufecql.public.blob.vercel-storage.com/sketches/68de2c9af1b3ed2d35b84588.jpg',
+		name: ''
+	},
+	{
+		url: 'https://woop14abphufecql.public.blob.vercel-storage.com/sketches/WhatsApp%20Image%202025-10-03%20at%2009.51.18.jpeg',
+		name: ''
+	},
+	{
+		url: 'https://woop14abphufecql.public.blob.vercel-storage.com/sketches/WhatsApp%20Image%202025-10-03%20at%2009.51.43.jpeg',
+		name: ''
+	}
+];
 
 	let isOpen = false;
-	const allImages = [mainImageUrl, ...imageUrls];
+    const allImages = [mainImageUrl, ...images.map(image => image.url)];
 	let currentIndex = 0;
 
 	let startX = 0;
@@ -68,22 +107,22 @@
 	<div
 		on:click={() => viewImage(0)}
 		style={`background-image: url('${mainImageUrl}')`}
-		class="w-full bg-slate-200 cursor-pointer bg-cover bg-center bg-no-repeat hover:brightness-90 md:bg-contain"
+		class="w-full bg-slate-200 cursor-pointer bg-cover bg-center bg-no-repeat md:bg-contain"
 	>
     </div>
 </div>
 
 <div class="grid grid-cols-2 gap-1 p-1 lg:grid-cols-5">
-	{#each imageUrls as url, i}
+	{#each images as img, i}
 		<div
 			on:click={() => viewImage(i+1)}
-			style={`background-image: url('${url}')`}
+			style={`background-image: url('${img.url}')`}
 			class="h-96 cursor-pointer bg-cover bg-center shadow hover:brightness-90 md:h-[600px] group"
 		>
         <div
 				class="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition"
 			>
-				<span class="text-xl font-medium text-white drop-shadow">Slika {i + 1}</span>
+				<span class="text-xl font-medium text-white drop-shadow">{img.name}</span>
 			</div>
         </div>
 	{/each}
