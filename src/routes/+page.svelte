@@ -41,7 +41,7 @@
 		if (Math.abs(diff) > 50) {
 			if (diff > 0)
 				nextImage(); 
-            else prevImage(); // swipe right → previous
+            else prevImage(); 
 		}
 	}
 
@@ -55,30 +55,29 @@
 	function prevImage() {
 		currentIndex = (currentIndex - 1 + allImages.length) % allImages.length;
 	}
-	function viewImage(url: string) {
-		currentImage = url;
+	function viewImage(index:number) {
+		currentIndex = index;
 		isOpen = true;
 	}
 
 	function closeImage() {
 		isOpen = false;
-		currentImage = null;
 	}
 </script>
 
 <!-- Main image -->
 <div class="flex min-h-screen w-full">
 	<div
-		on:click={() => viewImage(mainImageUrl)}
+		on:click={() => viewImage(0)}
 		style={`background-image: url('${mainImageUrl}')`}
 		class="w-full bg-gray-600 cursor-pointer bg-cover bg-center bg-no-repeat hover:brightness-90 md:bg-contain"
 	></div>
 </div>
 
 <div class="grid grid-cols-2 gap-1 p-1 lg:grid-cols-5">
-	{#each imageUrls as url}
+	{#each imageUrls as url, i}
 		<div
-			on:click={() => viewImage(url)}
+			on:click={() => viewImage(i+1)}
 			style={`background-image: url('${url}')`}
 			class="h-96 cursor-pointer bg-cover bg-center shadow hover:brightness-90 md:h-[600px]"
 		></div>
@@ -87,16 +86,22 @@
 {#if isOpen}
 	<div
 		class="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm transition-all"
+		on:click={closeImage}             
 		on:touchstart={handleTouchStart}
 		on:touchend={handleTouchEnd}
 	>
-		<div class="relative w-[90%] md:w-[80%] max-h-[90vh] flex justify-center">
+		<!-- Stop click bubbling inside -->
+		<div
+			class="relative w-[90%] md:w-[80%] max-h-[90vh] flex justify-center"
+			on:click|stopPropagation       
+		>
 			<img
 				src={allImages[currentIndex]}
 				alt="Preview"
 				class="max-w-full max-h-[90vh] object-contain rounded-lg shadow-lg transition-transform duration-300"
 			/>
 
+			<!-- Close button -->
 			<button
 				on:click={closeImage}
 				class="absolute top-2 right-2 text-white bg-black/60 hover:bg-black/80 rounded-full w-10 h-10 flex items-center justify-center text-2xl font-bold"
@@ -104,6 +109,7 @@
 				×
 			</button>
 
+			<!-- Arrows -->
 			<button
 				on:click={prevImage}
 				class="absolute left-2 top-1/2 -translate-y-1/2 text-white bg-black/50 hover:bg-black/70 rounded-full w-10 h-10 flex items-center justify-center text-2xl"
@@ -120,3 +126,4 @@
 		</div>
 	</div>
 {/if}
+
