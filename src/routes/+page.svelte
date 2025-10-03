@@ -133,8 +133,8 @@
 		<!-- svelte-ignore a11y_no_static_element_interactions -->
 		<div
 			on:click={() => viewImage(i + 1)}
-            on:touchstart={handleTouchStart}
-            on:touchend={handleTouchEnd}
+            on:touchstart={handleTouchStartHover}
+            on:touchend={handleTouchEndHover}
 			style={`background-image: url('${img.url}')`}
 			class="group h-96 cursor-pointer bg-cover bg-center shadow hover:brightness-90 md:h-[600px]"
 		>
