@@ -45,7 +45,7 @@
 	></div>
 </div>
 
-<div class="grid grid-cols-2 lg:grid-cols-5">
+<div class="grid grid-cols-2 lg:grid-cols-5 gap-1 p-1">
 	{#each imageUrls as url}
 		<div
 			on:click={() => viewImage(url)}
