@@ -1,5 +1,13 @@
 
 <script lang="ts">
+    import { onMount, onDestroy } from 'svelte';
+    onMount(() => {
+		const handler = (e: KeyboardEvent) => {
+			if (e.key === 'Escape') closeImage();
+		};
+		window.addEventListener('keydown', handler);
+		onDestroy(() => window.removeEventListener('keydown', handler));
+	});
 	let mainImageUrl =
 		'https://woop14abphufecql.public.blob.vercel-storage.com/sketches/68de2a44f1b3ed2d35b84586.jpg';
 
@@ -40,7 +48,8 @@
 	{#each imageUrls as url}
 		<div
 			on:click={() => viewImage(url)}
-			class="bg-[url('{url}')] h-96 bg-cover bg-center hover:brightness-90 cursor-pointer shadow"
+            style={`background-image: url('${url}')`}
+			class="h-96 md:h-[600px] bg-cover bg-center hover:brightness-90 cursor-pointer shadow"
 		></div>
 	{/each}
 </div>
