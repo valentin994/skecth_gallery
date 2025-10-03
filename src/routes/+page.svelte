@@ -71,7 +71,7 @@
 	<div
 		on:click={() => viewImage(mainImageUrl)}
 		style={`background-image: url('${mainImageUrl}')`}
-		class="w-full bg-gray-600 bg-cover bg-center bg-no-repeat hover:brightness-90 md:bg-contain"
+		class="w-full bg-gray-600 cursor-pointer bg-cover bg-center bg-no-repeat hover:brightness-90 md:bg-contain"
 	></div>
 </div>
 
