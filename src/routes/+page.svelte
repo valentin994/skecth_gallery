@@ -14,7 +14,7 @@
 const images = [
 	{
 		url: 'https://woop14abphufecql.public.blob.vercel-storage.com/sketches/68de2a44f1b3ed2d35b84587.jpg',
-		name: 'Mateja i Tom'
+		name: 'Tom i Mateja'
 	},
 	{
 		url: 'https://woop14abphufecql.public.blob.vercel-storage.com/sketches/68de2a44f1b3ed2d35b84584.jpg',
@@ -26,43 +26,43 @@ const images = [
 	},
 	{
 		url: 'https://woop14abphufecql.public.blob.vercel-storage.com/sketches/68de2a44f1b3ed2d35b84581.jpg',
-		name: ''
+		name: 'Martina, Marija i Mateja'
 	},
 	{
 		url: 'https://woop14abphufecql.public.blob.vercel-storage.com/sketches/68de2a44f1b3ed2d35b84583.jpg',
-		name: ''
+		name: 'Dominik i Doroteja'
 	},
 	{
 		url: 'https://woop14abphufecql.public.blob.vercel-storage.com/sketches/WhatsApp%20Image%202025-10-03%20at%2015.00.29%281%29.jpeg',
-		name: ''
+		name: 'Zorica'
 	},
 	{
 		url: 'https://woop14abphufecql.public.blob.vercel-storage.com/sketches/WhatsApp%20Image%202025-10-03%20at%2011.02.06.jpeg',
-		name: ''
+		name: 'Ruza, Jadranka i Marinka'
 	},
 	{
 		url: 'https://woop14abphufecql.public.blob.vercel-storage.com/sketches/68de2a44f1b3ed2d35b84582.jpg',
-		name: ''
+		name: 'Zuhair, Ruza i Tamir'
 	},
 	{
 		url: 'https://woop14abphufecql.public.blob.vercel-storage.com/sketches/68de2a44f1b3ed2d35b8457f.jpg',
-		name: ''
+		name: 'Anda i Paula'
 	},
 	{
 		url: 'https://woop14abphufecql.public.blob.vercel-storage.com/sketches/68de2a44f1b3ed2d35b84580.jpg',
-		name: ''
+		name: 'Mateja, Paula, Karlo i Petar'
 	},
 	{
 		url: 'https://woop14abphufecql.public.blob.vercel-storage.com/sketches/68de2c9af1b3ed2d35b84588.jpg',
-		name: ''
+		name: 'Ivan i Paula'
 	},
 	{
 		url: 'https://woop14abphufecql.public.blob.vercel-storage.com/sketches/WhatsApp%20Image%202025-10-03%20at%2009.51.18.jpeg',
-		name: ''
+		name: 'Monika i Dario'
 	},
 	{
 		url: 'https://woop14abphufecql.public.blob.vercel-storage.com/sketches/WhatsApp%20Image%202025-10-03%20at%2009.51.43.jpeg',
-		name: ''
+		name: 'Marko'
 	}
 ];
 
@@ -104,6 +104,8 @@ const images = [
 	}
 </script>
 <div class="flex min-h-screen w-full">
+	<!-- svelte-ignore a11y_click_events_have_key_events -->
+	<!-- svelte-ignore a11y_no_static_element_interactions -->
 	<div
 		on:click={() => viewImage(0)}
 		style={`background-image: url('${mainImageUrl}')`}
@@ -114,6 +116,8 @@ const images = [
 
 <div class="grid grid-cols-2 gap-1 p-1 lg:grid-cols-5">
 	{#each images as img, i}
+		<!-- svelte-ignore a11y_click_events_have_key_events -->
+		<!-- svelte-ignore a11y_no_static_element_interactions -->
 		<div
 			on:click={() => viewImage(i+1)}
 			style={`background-image: url('${img.url}')`}
@@ -178,6 +182,8 @@ const images = [
   </h2>
 </div>
 {#if isOpen}
+	<!-- svelte-ignore a11y_click_events_have_key_events -->
+	<!-- svelte-ignore a11y_no_static_element_interactions -->
 	<div
 		class="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm transition-all"
 		on:click={closeImage}             
