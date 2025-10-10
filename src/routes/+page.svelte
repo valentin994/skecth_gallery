@@ -111,7 +111,7 @@
 		isOpen = false;
 	}
 
-    let touchIndex = null;
+    let touchIndex: number | null = null;
 	function handleTouchStartHover(index: number) {
         touchIndex = index;
 	}
@@ -131,7 +131,7 @@
 	></div>
 </div>
 
-<div class="grid grid-cols-2 gap-1 p-1 lg:grid-cols-5">
+<div class="grid grid-cols-2 gap-1 p-1 lg:grid-cols-5 bg-slate-200 font-roboto">
 	{#each images as img, i}
 		<!-- svelte-ignore a11y_click_events_have_key_events -->
 		<!-- svelte-ignore a11y_no_static_element_interactions -->
@@ -140,7 +140,7 @@
             on:touchstart={() => handleTouchStartHover(i)}
             on:touchend={handleTouchEndHover}
 			style={`background-image: url('${img.url}')`}
-			class="relative group h-96 cursor-pointer bg-cover bg-center shadow hover:brightness-90 md:h-[600px]"
+			class="relative group h-96 cursor-pointer bg-cover bg-center hover:brightness-90 md:h-[600px]"
 		>
 			<div
 class={`absolute inset-0 flex items-center justify-center bg-black/40 transition ${
@@ -153,7 +153,7 @@ class={`absolute inset-0 flex items-center justify-center bg-black/40 transition
 	{/each}
 </div>
 
-<div class="flex flex-col justify-center bg-slate-100 pt-16 pb-8 text-center">
+<div class="flex flex-col justify-center bg-slate-200 pt-16 pb-8 text-center">
 	<h1 class="text-2xl font-bold tracking-tight text-slate-700 md:text-4xl">
 		Imate skicu sa svadbe?
 	</h1>
@@ -225,6 +225,8 @@ class={`absolute inset-0 flex items-center justify-center bg-black/40 transition
 	</h2>
 </div>
 {#if isOpen}
+<!-- svelte-ignore a11y_click_events_have_key_events -->
+<!-- svelte-ignore a11y_no_static_element_interactions -->
 <div
   class="fixed inset-0 z-50 flex flex-col items-center justify-center bg-black/80 backdrop-blur-sm transition-all"
   on:click={closeImage}
