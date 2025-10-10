@@ -17,6 +17,10 @@
 			url: 'https://woop14abphufecql.public.blob.vercel-storage.com/sketches/68de2a44f1b3ed2d35b84587.jpg',
 			name: 'Tom i Mateja'
 		},
+        {
+            url: 'https://woop14abphufecql.public.blob.vercel-storage.com/sketches/nenadialexa.jpg',
+            name: 'Nenad i Alexa'
+        },
 		{
 			url: 'https://woop14abphufecql.public.blob.vercel-storage.com/sketches/68de2a44f1b3ed2d35b84584.jpg',
 			name: 'Lidija i Leo'
@@ -143,7 +147,7 @@ class={`absolute inset-0 flex items-center justify-center bg-black/40 transition
 					touchIndex === i ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'
 				}`}
 			>
-				<span class="text-xl font-medium text-white drop-shadow">{img.name}</span>
+				<span class="text-xl font-medium text-white drop-shadow px-2 text-center">{img.name}</span>
 			</div>
 		</div>
 	{/each}
@@ -222,29 +226,38 @@ class={`absolute inset-0 flex items-center justify-center bg-black/40 transition
 </div>
 {#if isOpen}
 <div
-  class="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm transition-all"
+  class="fixed inset-0 z-50 flex flex-col items-center justify-center bg-black/80 backdrop-blur-sm transition-all"
   on:click={closeImage}
   on:touchstart={handleTouchStart}
   on:touchend={handleTouchEnd}
 >
   <div
-    class="relative flex max-h-[90vh] w-[90%] items-center justify-center md:w-[80%]"
+    class="relative flex max-h-[90vh] w-[90%] flex-col items-center justify-center md:w-[80%]"
     on:click|stopPropagation
   >
+    <!-- Image -->
     <img
       src={allImages[currentIndex]}
       alt="Preview"
-      class="max-h-[90vh] max-w-full rounded-lg object-contain shadow-lg transition-transform duration-300"
+      class="max-h-[80vh] max-w-full rounded-lg object-contain shadow-lg transition-transform duration-300"
     />
 
-    <!-- Fixed Close button -->
+    <!-- Image name -->
+    <p class="mt-4 text-center text-lg font-medium text-white drop-shadow-lg">
+      {#if currentIndex === 0}
+        Valentin i Marija
+      {:else}
+        {images[currentIndex - 1].name}
+      {/if}
+    </p>
+
+    <!-- Close button -->
     <button
       type="button"
       aria-label="Close preview"
       on:click={closeImage}
       class="fixed top-6 right-6 z-50 flex h-10 w-10 items-center justify-center rounded-full bg-black/60 text-white hover:bg-black/80"
     >
-      <!-- Centered X icon -->
       <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <line x1="18" y1="6" x2="6" y2="18" />
         <line x1="6" y1="6" x2="18" y2="18" />
