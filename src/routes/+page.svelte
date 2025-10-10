@@ -237,17 +237,21 @@ class={`absolute inset-0 flex items-center justify-center bg-black/40 transition
       class="max-h-[90vh] max-w-full rounded-lg object-contain shadow-lg transition-transform duration-300"
     />
 
-    <!-- Close -->
+    <!-- Fixed Close button -->
     <button
       type="button"
       aria-label="Close preview"
       on:click={closeImage}
-      class="absolute top-2 right-2 flex h-10 w-10 items-center justify-center rounded-full bg-black/60 text-2xl font-bold text-white hover:bg-black/80"
+      class="fixed top-6 right-6 z-50 flex h-10 w-10 items-center justify-center rounded-full bg-black/60 text-white hover:bg-black/80"
     >
-      ×
+      <!-- Centered X icon -->
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="18" y1="6" x2="6" y2="18" />
+        <line x1="6" y1="6" x2="18" y2="18" />
+      </svg>
     </button>
 
-    <!-- Prev (SVG) -->
+    <!-- Prev arrow -->
     <button
       type="button"
       aria-label="Previous image"
@@ -259,7 +263,7 @@ class={`absolute inset-0 flex items-center justify-center bg-black/40 transition
       </svg>
     </button>
 
-    <!-- Next (SVG) -->
+    <!-- Next arrow -->
     <button
       type="button"
       aria-label="Next image"
