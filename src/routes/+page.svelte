@@ -153,7 +153,7 @@ class={`absolute inset-0 flex items-center justify-center bg-black/40 transition
 	{/each}
 </div>
 
-<div class="flex flex-col justify-center bg-slate-200 pt-16 pb-8 text-center">
+<div class="flex flex-col justify-center bg-slate-200 pt-16 pb-8 text-center font-roboto">
 	<h1 class="text-2xl font-bold tracking-tight text-slate-700 md:text-4xl">
 		Imate skicu sa svadbe?
 	</h1>
