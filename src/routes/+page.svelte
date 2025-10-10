@@ -221,47 +221,55 @@ class={`absolute inset-0 flex items-center justify-center bg-black/40 transition
 	</h2>
 </div>
 {#if isOpen}
-	<!-- svelte-ignore a11y_click_events_have_key_events -->
-	<!-- svelte-ignore a11y_no_static_element_interactions -->
-	<div
-		class="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm transition-all"
-		on:click={closeImage}
-		on:touchstart={handleTouchStart}
-		on:touchend={handleTouchEnd}
-	>
-		<!-- Stop click bubbling inside -->
-		<div
-			class="relative flex max-h-[90vh] w-[90%] justify-center md:w-[80%]"
-			on:click|stopPropagation
-		>
-			<img
-				src={allImages[currentIndex]}
-				alt="Preview"
-				class="max-h-[90vh] max-w-full rounded-lg object-contain shadow-lg transition-transform duration-300"
-			/>
+<div
+  class="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm transition-all"
+  on:click={closeImage}
+  on:touchstart={handleTouchStart}
+  on:touchend={handleTouchEnd}
+>
+  <div
+    class="relative flex max-h-[90vh] w-[90%] items-center justify-center md:w-[80%]"
+    on:click|stopPropagation
+  >
+    <img
+      src={allImages[currentIndex]}
+      alt="Preview"
+      class="max-h-[90vh] max-w-full rounded-lg object-contain shadow-lg transition-transform duration-300"
+    />
 
-			<!-- Close button -->
-			<button
-				on:click={closeImage}
-				class="absolute top-2 right-2 flex h-10 w-10 items-center justify-center rounded-full bg-black/60 text-2xl font-bold text-white hover:bg-black/80"
-			>
-				×
-			</button>
+    <!-- Close -->
+    <button
+      type="button"
+      aria-label="Close preview"
+      on:click={closeImage}
+      class="absolute top-2 right-2 flex h-10 w-10 items-center justify-center rounded-full bg-black/60 text-2xl font-bold text-white hover:bg-black/80"
+    >
+      ×
+    </button>
 
-			<!-- Arrows -->
-			<button
-				on:click={prevImage}
-				class="absolute top-1/2 left-2 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-black/50 text-2xl text-white hover:bg-black/70"
-			>
-				‹
-			</button>
+    <!-- Prev (SVG) -->
+    <button
+      type="button"
+      aria-label="Previous image"
+      on:click={prevImage}
+      class="absolute left-3 top-1/2 z-40 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-black/50 hover:bg-black/70"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M15 18l-6-6 6-6" />
+      </svg>
+    </button>
 
-			<button
-				on:click={nextImage}
-				class="absolute top-1/2 right-2 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-black/50 text-2xl text-white hover:bg-black/70"
-			>
-				›
-			</button>
-		</div>
-	</div>
+    <!-- Next (SVG) -->
+    <button
+      type="button"
+      aria-label="Next image"
+      on:click={nextImage}
+      class="absolute right-3 top-1/2 z-40 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-black/50 hover:bg-black/70"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M9 6l6 6-6 6" />
+      </svg>
+    </button>
+  </div>
+</div>
 {/if}
