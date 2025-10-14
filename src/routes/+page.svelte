@@ -72,7 +72,75 @@
 		{
 			url: 'https://woop14abphufecql.public.blob.vercel-storage.com/sketches/WhatsApp%20Image%202025-10-03%20at%2015.22.51.jpeg',
 			name: 'Goran'
-		}
+		},
+        {
+            url: 'https://woop14abphufecql.public.blob.vercel-storage.com/sketches/WhatsApp%20Image%202025-10-13%20at%2011.37.10_ebbcc13c.jpg',
+            name: "Goran i Iva"
+        },
+        {
+            url: 'https://woop14abphufecql.public.blob.vercel-storage.com/sketches/552311961_1639172483709359_2338818531837302294_n.jpg',
+            name: 'Marjana i Boro'
+        },
+        {
+            url: 'https://woop14abphufecql.public.blob.vercel-storage.com/sketches/WhatsApp%20Image%202025-10-06%20at%2020.40.33_748cf8ef.jpg',
+            name: 'Marina i Radan'
+        },
+        {
+            url: 'https://woop14abphufecql.public.blob.vercel-storage.com/sketches/WhatsApp%20Image%202025-10-13%20at%2011.37.14_9905d42c.jpg',
+            name: 'Megi i Iva'
+        },
+        {
+            url: 'https://woop14abphufecql.public.blob.vercel-storage.com/sketches/WhatsApp%20Image%202025-10-06%20at%2020.41.12_e3f5f4f3.jpg',
+            name: 'Danijel i Daliborka'
+        },
+        {
+            url: 'https://woop14abphufecql.public.blob.vercel-storage.com/sketches/WhatsApp%20Image%202025-10-06%20at%2020.41.42_885b6d50.jpg',
+            name: 'Katarina i Mario'
+        },
+        {
+            url: 'https://woop14abphufecql.public.blob.vercel-storage.com/sketches/WhatsApp%20Image%202025-10-06%20at%2020.42.10_80a9177e.jpg',
+            name: 'Ivanka i Zoran'
+        },
+        {
+            url: 'https://woop14abphufecql.public.blob.vercel-storage.com/sketches/WhatsApp%20Image%202025-10-06%20at%2020.42.55_50871d64.jpg',
+            name: 'Jurica i Nikolina'
+        },
+        {
+            url: 'https://woop14abphufecql.public.blob.vercel-storage.com/sketches/WhatsApp%20Image%202025-10-06%20at%2020.45.30_54d57946.jpg',
+            name: 'Dragan, Luka, Josip, Toni, Anica, Zorica, Monika'
+        },
+        {
+            url: 'https://woop14abphufecql.public.blob.vercel-storage.com/sketches/WhatsApp%20Image%202025-10-06%20at%2020.46.09_33c2eca9.jpg',
+            name: 'Zlatko i Manda'
+        },
+        {
+            url: 'https://woop14abphufecql.public.blob.vercel-storage.com/sketches/WhatsApp%20Image%202025-10-07%20at%2008.08.25_61a74843.jpg',
+            name: 'Marko i Dajana'
+        },
+        {
+            url: 'https://woop14abphufecql.public.blob.vercel-storage.com/sketches/WhatsApp%20Image%202025-10-07%20at%2018.19.15_97111865.jpg',
+            name: 'Goran'
+        },
+        {
+            url: 'https://woop14abphufecql.public.blob.vercel-storage.com/sketches/WhatsApp%20Image%202025-10-07%20at%2008.08.54_d28e9b5d.jpg',
+            name: 'Anita'
+        },
+        {
+            url: 'https://woop14abphufecql.public.blob.vercel-storage.com/sketches/554572685_1526138941919637_5112352331578807298_n.jpg',
+            name: 'Finka i Anto'
+        },
+        {
+            url: 'https://woop14abphufecql.public.blob.vercel-storage.com/sketches/554209616_1669763707744449_1079822956290112077_n.jpg',
+            name: 'Ivan'
+        },
+        {
+            url: 'https://woop14abphufecql.public.blob.vercel-storage.com/sketches/553391542_1564680571570518_1418339339694233949_n.jpg',
+            name: 'Željka i Anto'
+        },
+        {
+            url: 'https://woop14abphufecql.public.blob.vercel-storage.com/sketches/554582834_793578006726155_178835422213847024_n.jpg',
+            name: 'Ana i Kristijan'
+        }
 	];
 
 	let isOpen = false;
